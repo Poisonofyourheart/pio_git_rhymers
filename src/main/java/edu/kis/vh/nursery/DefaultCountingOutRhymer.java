@@ -4,7 +4,7 @@ public class DefaultCountingOutRhymer {
 
     public static final int SIZE = 12;
     public static final int TOTAL = -1;
-    private int[] numbers = new int[SIZE];
+    final private int[] numbers = new int[SIZE];
 
     public int total = TOTAL;
 
@@ -13,15 +13,15 @@ public class DefaultCountingOutRhymer {
             numbers[++total] = in;
     }
 
-    public boolean callCheck() {
+    final public boolean callCheck() {
         return total == TOTAL;
     }
 
-    public boolean isFull() {
+    final public boolean isFull() {
         return total == 11;
     }
 
-    protected int peekaboo() {
+    final protected int peekaboo() {
         if (callCheck())
             return TOTAL;
         return numbers[total];
